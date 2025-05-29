@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cctype>
+#include <algorithm>
 using namespace std;
 
 int main(){
@@ -6,6 +8,7 @@ int main(){
     string nombres="";
     float horas,precio_hora,salario;
     string datos;
+    char cadena1[] = "si";
 
         //pedir datos del usuario
         cout<<"Ingrese su nombre: ";
@@ -30,8 +33,9 @@ int main(){
 
         cout<<"Deseas realizar otro calculo? " <<endl <<"Escribe Si para continuar la operacion" <<endl<<"Escribe No para finalizar la operacion"<<endl;
         cin>> datos; cout<<""<<endl;
+        transform(datos.begin(), datos.end(), datos.begin(), ::tolower);
 
-        while(datos =="Si"){
+        while(datos == cadena1){
             
              //pedir datos del usuario
             cout<<"Ingrese su nombre: ";
